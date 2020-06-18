@@ -1,36 +1,63 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
-import { AppBar, Button, ButtonGroup, Grid, Box, Card, GridList } from '@material-ui/core';
+import { AppBar, Button, ButtonGroup, Grid } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import BuildIcon from '@material-ui/icons/Build';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
+import ImageFader from './ImageFader';
+import ExpandMoreArrow from './ExpandMoreArrow';
 
 const useStyles = makeStyles((theme) => ({
-  cloud: {
-    display: 'block',
-    height: '100%',
-    width: '100%'
-  },
-  whosthatsexyman: {
+  picture: {
     display: 'block',
     height: '50%',
     width: '50%',
     marginLeft:'5%'
   },
-  textShadow: {
-    textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black'
-  },
   flex: {
-    flex: 1
+    flex: 1,
   },
   icon: {
     fontSize: 150,
     marginTop: 125
+  },
+  heading: {
+    textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
+    textAlign: 'center',
+ 
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 50,
+      margin: '0 40px 0px 40px'
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: 60,
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 80,
+    },
+  },
+
+  textShadow: {
+    textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
+  },
+
+  subheading: {
+    textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
+    textAlign: 'center',
+
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 22,
+      margin: '60px 20px 0 20px'
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: 20
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 30
+    },
   }
 }));
 
@@ -56,11 +83,24 @@ export default function HomePage() {
 
       <Parallax pages={3}>
 
-        <ParallaxLayer offset={0.05} speed={1}>
-          <img src={'https://media.discordapp.net/attachments/708049485665927208/720466918837846076/IMG_1598.JPG'} className={classes.cloud}>
-          </img>
+        <ParallaxLayer offset={0} speed={1}>
+          <ImageFader/>
         </ParallaxLayer>
 
+        <ParallaxLayer offset={0.85} speed={1}>
+         <Grid
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <Typography color={'secondary'} className={classes.textShadow}>
+              <b>LEARN MORE</b>
+            </Typography>
+            <ExpandMoreArrow/>
+          </Grid>
+        </ParallaxLayer>
+        
         <ParallaxLayer offset={0.2} speed={0.7}>
           <Grid
             container
@@ -68,104 +108,32 @@ export default function HomePage() {
             justify="center"
             alignItems="center"
           >
-            <Typography variant={'h1'} color={'secondary'} className={classes.textShadow}>
+            <Typography color={'secondary'} className={classes.heading}>
               <b>HORIZON CLEARING INC.</b>
             </Typography>
 
           </Grid>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0.32} speed={0.6}>
+        <ParallaxLayer offset={0.38} speed={0.6}>
           <Grid
             container
             direction="row"
             justify="center"
             alignItems="center"
           >
-            <Typography variant={'h5'} color={'secondary'} classname={classes.textShadow}>
+            <Typography color={'secondary'} className={classes.subheading}>
               <b>Serving Edmonton, Calgary, and the surrounding areas.</b>
             </Typography>
-          
           </Grid>
-        </ParallaxLayer>
-
-        <ParallaxLayer offset={0.9999} speed={0.2}>
-          <GridList>
-            <Grid
-              container
-              direction="row"
-              justify="left"
-              alignItems="center"
-            >
-              <Card className={classes.root}>
-                <CardContent>
-                  <Typography className={classes.title} color="textSecondary" gutterBottom>
-                    Placeholder card
-                  </Typography>
-                  <Typography variant="h5" component="h2">
-                    The idea is that a picture will be here and text will be to the right
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    adjective
-                  </Typography>
-                  <Typography variant="body2" component="p">
-                    well meaning and kindly.
-                    <br />
-                    {'"a benevolent smile"'}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Learn More</Button>
-                </CardActions>
-              </Card>
-            </Grid>
-
-            <Grid
-              container
-              direction="column"
-              justify="center"
-              alighItems="center"
-            >
-              <Typography>
-                <b>Est 2004.</b>
-              </Typography>
-              <Typography display='block'>
-                <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi justo, accumsan vitae neque vel, mattis congue dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur blandit finibus mauris, id consectetur urna gravida eu. Curabitur condimentum vel leo ut laoreet. Nunc mattis vestibulum elementum. Proin elementum, ligula at viverra condimentum, mauris leo faucibus neque, malesuada vestibulum tellus sapien sed neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin posuere tellus in turpis eleifend, nec accumsan elit semper. Vestibulum malesuada justo vel metus convallis, ac efficitur nisl volutpat. Curabitur et magna vel sem blandit commodo non in magna. Nulla libero justo, euismod non tortor et, ornare laoreet odio. Duis egestas tristique euismod. Donec ornare orci est, vel venenatis nulla pharetra vitae. Nunc quis tempor enim.</b>
-              </Typography>
-            </Grid>
-          </GridList>
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#6d6d6d' }}>
-        <Grid
-          container
-          direction="row"
-          justify="left"
-          alignItems="left"
-        >
-          <Box>
-            <Typography>
-              <b>test eh</b>
-            </Typography>
-          </Box>
-          <Grid
-            container
-            direction="column"
-            justify="right"
-            alighItems="right"
-          >
-            <Typography>
-              <b>Est 2004.</b>
-            </Typography>
-            <Typography display='block'>
-              <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi justo, accumsan vitae neque vel, mattis congue dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur blandit finibus mauris, id consectetur urna gravida eu. Curabitur condimentum vel leo ut laoreet. Nunc mattis vestibulum elementum. Proin elementum, ligula at viverra condimentum, mauris leo faucibus neque, malesuada vestibulum tellus sapien sed neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin posuere tellus in turpis eleifend, nec accumsan elit semper. Vestibulum malesuada justo vel metus convallis, ac efficitur nisl volutpat. Curabitur et magna vel sem blandit commodo non in magna. Nulla libero justo, euismod non tortor et, ornare laoreet odio. Duis egestas tristique euismod. Donec ornare orci est, vel venenatis nulla pharetra vitae. Nunc quis tempor enim.</b>
-            </Typography>
-          </Grid>
-        </Grid>
+          
         </ParallaxLayer>
 
         <ParallaxLayer offset={1} speed={.8}>
-        <Grid
+          <Grid
             container
             direction="row"
             justify="space-evenly"
@@ -200,7 +168,7 @@ export default function HomePage() {
         </ParallaxLayer>
 
         <ParallaxLayer offset={2.125} speed={.8}>
-          <img src={'https://media.discordapp.net/attachments/708049485665927208/720468050272452699/20150926_174452.jpg'} className={classes.whosthatsexyman}/>
+          <img src={'https://media.discordapp.net/attachments/708049485665927208/720468050272452699/20150926_174452.jpg'} className={classes.picture}/>
         </ParallaxLayer>
 
       </Parallax>
