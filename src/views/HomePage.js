@@ -11,14 +11,23 @@ import ImageFader from './ImageFader';
 import ExpandMoreArrow from './ExpandMoreArrow';
 
 const useStyles = makeStyles((theme) => ({
-  picture: {
-    display: 'block',
-    height: '50%',
-    width: '50%',
-    marginLeft:'5%'
+  appBar: {
+    minHeight: 65
   },
-  flex: {
-    flex: 1,
+  appBarHeading: {
+    [theme.breakpoints.up('sm')]: {
+      flex: 1,
+    },
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+  },
+  appBarButtons: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      margin: 'auto',
+      paddingTop: 7
+    },
   },
   icon: {
     fontSize: 150,
@@ -47,13 +56,13 @@ const useStyles = makeStyles((theme) => ({
   subheading: {
     textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
     textAlign: 'center',
+    fontSize: 22,
 
-    [theme.breakpoints.down('sm')]: {
-      fontSize: 22,
-      margin: '60px 20px 0 20px'
+    [theme.breakpoints.down('xs')]: {
+      margin: '140px 20px 0 20px'
     },
-    [theme.breakpoints.up('md')]: {
-      fontSize: 20
+    [theme.breakpoints.up('sm')]: {
+      margin: '50px 20px 0 20px'
     },
     [theme.breakpoints.up('lg')]: {
       fontSize: 30
@@ -68,12 +77,12 @@ export default function HomePage() {
   return (
     <React.Fragment>
 
-      <AppBar position="fixed">
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <Typography edge="start" variant="h6" className={classes.flex}>
+          <Typography edge="start" variant="h6" className={classes.appBarHeading}>
             Horizon Clearing Inc.
           </Typography>
-          <ButtonGroup edge="end" variant="text" color="inherit">
+          <ButtonGroup variant="text" color="inherit" className={classes.appBarButtons}>
             <Button>Commercial</Button>
             <Button>Residential</Button>
             <Button>Contact Us</Button>
