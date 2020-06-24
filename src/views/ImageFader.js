@@ -17,13 +17,13 @@ const slides = [
 const useStyles = makeStyles((theme) => ({
     bg: {
       position: 'absolute',
-      width: '100vw',
-      height: '100vh',
-      top: '65px',
+      width: '100%',
+      height: '100%',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      willChange: 'opacity'
-    }
+      willChange: 'opacity',
+      zIndex: -2
+    },
 }));
 
 const ImageFader = () => {

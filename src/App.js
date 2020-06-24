@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import HomePage from './views/HomePage';
+import Main from './views/Main';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import './views/styles.css';
@@ -42,7 +42,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Switch>
-        <Route path='/' render={props => <HomePage {...props}/>} />
+        <Route path='/' render={props => <Main {...props}/>} />
       </Switch>
     </ThemeProvider>
   );

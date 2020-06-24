@@ -11,7 +11,7 @@ const ExpandMoreArrow = () => {
     to: async next => {
       while (1) {
         await next({ transform: `translate3d(0,0px,0)` })
-        await next({ transform: `translate3d(0,10,0)` })
+        await next({ transform: `translate3d(0,10px,0)` })
       }
     },
   });
