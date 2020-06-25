@@ -1,11 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import AttachMoney from '@material-ui/icons/AttachMoney';
-
+//, from finding the right aggregate materials to the optimal method to lay them down, we leave no stone unturned.
 const useStyles = makeStyles((theme) => ({
 
   root: {
@@ -13,9 +13,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 75
   },
 
+  paper: {
+    marginTop: 75,
+    padding:15,
+    margin: 10
+  },
+
   icon: {
     fontSize: 150,
-    marginTop: 75,
     paddingLeft: 75
   },
 
@@ -40,17 +45,21 @@ export default function CompanyDetails(props) {
             alignItems="flex-start"
         >
             <Grid item>
-            <BusinessCenterIcon className={classes.icon}/>
-            <Typography variant={'h3'} style={{textAlign: 'center'}}>
-                <b>Dedicated.</b>
-            </Typography>
-            <Typography variant={'h5'} className={classes.infoText}>
-                "If it's not done right, it's not worth doing at all." 
-                Our founder is a firm believer in delivering reliable products that are built to last. 
-                We work alongside industry professionals to ensure that your final product is up to grade.
-            </Typography>
+              <Paper elevation={3} className={classes.paper}>
+                <BusinessCenterIcon className={classes.icon}/>
+                <Typography variant={'h3'} style={{textAlign: 'center'}}>
+                    <b>Dedicated.</b>
+                </Typography>
+                <Typography variant={'h5'} className={classes.infoText}>
+                    "If it's not done right, it's not worth doing at all." 
+                    Our founder is a firm believer in delivering reliable products that are built to last. 
+                    We work alongside industry professionals to ensure that your final product is up to grade.
+                </Typography>
+              </Paper>
             </Grid>
+            
             <Grid item>
+            <Paper elevation={3} className={classes.paper}>
             <AttachMoney className={classes.icon}/>
             <Typography variant={'h3'} style={{textAlign: 'center'}}>
                 <b>Trusted.</b>
@@ -61,8 +70,10 @@ export default function CompanyDetails(props) {
                 Be it: site preparation, land clearing, road building, or erosion control, we've provided products across Central Alberta that leave a lasting impression. 
                 Repeat customers are our business. 
             </Typography>
+            </Paper>
             </Grid>
             <Grid item>
+            <Paper elevation={3} className={classes.paper}>
             <ScheduleIcon className={classes.icon}/>
             <Typography variant={'h3'} style={{textAlign: 'center'}}>
                 <b>Efficient.</b>
@@ -70,8 +81,9 @@ export default function CompanyDetails(props) {
             <Typography variant={'h5'} className={classes.infoText}>
                 Both cost-effective and deadline-oriented; 
                 At Horizon Clearing we approach each project with an economic mindset. 
-                From start-to-finish, we ensure a great product at a competitive market price, from finding the right aggregate materials to the optimal method to lay them down, we leave no stone unturned.
+                From start-to-finish, we ensure a great product at a competitive market price.
             </Typography>
+            </Paper>
             </Grid>
         </Grid>
     </div>
