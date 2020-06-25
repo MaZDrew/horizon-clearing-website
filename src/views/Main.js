@@ -4,10 +4,10 @@ import { AppBar, Button, ButtonGroup, Fab } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import ExpandLess from '@material-ui/icons/ExpandLess';
-import HideOnScroll from "../utils/HideOnScroll";
 import HomePage from './HomePage';
 import CompanyHero from './CompanyHero';
 import CompanyDetails from './CompanyDetails';
+import { HideOnScroll, ShowOnScroll } from '../utils/scrollingUtils';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -36,37 +36,59 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 
-  picture: {
-    width: '50%',
-    height: '50%'
-  },
-
   fabScrollToTop: {
     position: 'fixed',
     right: 35,
     bottom: 15,
     zIndex: 3
-  },
-
-  icon: {
-    fontSize: 150,
-    marginTop: 75,
-    paddingLeft: 75
-  },
-
-  infoText: {
-    textAlign: 'center',
-    width: 300,
-    marginTop: 20
   }
 }));
 
+//TODO: Add Image preloading
+//TODO: Make it so Images do not swap when browser not in focus
+
 export default function Main(props) {
 
-  const classes = useStyles();
+  const classes = useStyles()
 
-  const setView = (offset) => {
-    
+  React.useEffect(() => {
+    scrollToHashElement();
+  }, []);
+  
+  const setHash = (hash) => {
+    window.location.hash = hash;
+
+    scrollToHashElement();
+  }
+
+  const scrollToHashElement = () => {
+    const hash = window.location.hash;
+    const element = document.getElementById(hash.replace("#", ""));
+
+    if(element) {
+      setTimeout(() => {
+        window.scrollTo({
+          behavior: element ? "smooth" : "auto",
+          top: element ? element.offsetTop : 0
+        });
+      }, 100);
+    } else {
+      scrollToTop()
+    }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: 0
+    });
+  }
+
+  const scrollDownPageLength = () => {
+    window.scrollTo({
+      behavior: "smooth",
+      top: window.innerHeight
+    });
   }
 
   return (
@@ -79,23 +101,25 @@ export default function Main(props) {
               Horizon Clearing Inc.
             </Typography>
             <ButtonGroup variant="text" color="inherit" className={classes.appBarButtons}>
-              <Button onClick={() => setView(1)}>Commercial</Button>
-              <Button onClick={() => setView(2)}>Residential</Button>
+              <Button onClick={() => setHash('commercial')}>Commercial</Button>
+              <Button onClick={() => setHash('residential')}>Residential</Button>
               <Button>Contact Us</Button>
             </ButtonGroup>
           </Toolbar>
         </AppBar>
       </HideOnScroll>
 
-      <HomePage />
+      <HomePage scrollDown={scrollDownPageLength}/>
       
-      <CompanyDetails/>
+      <CompanyDetails />
 
-      <CompanyHero/>
-
-      <Fab onClick={() => setView(0)} color="primary" className={classes.fabScrollToTop}>
-        <ExpandLess />
-      </Fab>
+      <CompanyHero />
+      
+      <ShowOnScroll threshold={100}>
+        <Fab onClick={() => scrollToTop()} size="medium" color="primary" className={classes.fabScrollToTop}>
+          <ExpandLess />
+        </Fab>
+      </ShowOnScroll>
 
     </div>
   )

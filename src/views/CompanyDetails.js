@@ -32,7 +32,7 @@ export default function CompanyDetails(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id={'commercial'}>
         <Grid
             container
             direction="row"

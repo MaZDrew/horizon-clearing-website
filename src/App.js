@@ -1,5 +1,4 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
 import Main from './views/Main';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -41,9 +40,7 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Switch>
-        <Route path='/' render={props => <Main {...props}/>} />
-      </Switch>
+      <Main/>
     </ThemeProvider>
   );
 }

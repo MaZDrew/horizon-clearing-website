@@ -41,10 +41,10 @@ export default function CompanyHero() {
   const classes = useStyles();
 
   return (
-    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${Image})` }}>
+    <Paper id={'residential'} className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${Image})` }}>
       {/* Increase the priority of the hero background image */}
       {<img style={{ display: 'none' }} src={Image} alt={'hero'} />}
-      <div className={classes.overlay} />
+      <div className={classes.overlay} id={'commercial'}/>
       <Grid container>
         <Grid item md={8}>
           <div className={classes.mainFeaturedPostContent}>

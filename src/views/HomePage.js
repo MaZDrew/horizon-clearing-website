@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Button } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import ImageFader from './ImageFader';
 import ExpandMoreArrow from './ExpandMoreArrow';
@@ -68,6 +68,14 @@ export default function HomePage(props) {
 
   const classes = useStyles();
 
+  const scrollDown = () => {
+    console.log(window.innerHeight);
+    window.scrollTo({
+      behavior: 'smooth',
+      top: window.innerheight
+    })
+  }
+
   return (
     <div className={classes.root}>
 
@@ -84,9 +92,9 @@ export default function HomePage(props) {
 
       <div className={classes.learnMore}>
         <Grid container direction={'column'} justify={'center'} alignItems={'center'}>
-          <Typography color={'secondary'} className={classes.text}>
-            <b>Learn More</b>
-          </Typography>
+          <Button onClick={() => props.scrollDown()} color="secondary" className={classes.text}>
+            Learn More
+          </Button>
           <ExpandMoreArrow/>
         </Grid>
       </div>

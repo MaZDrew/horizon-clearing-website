@@ -1,5 +1,5 @@
 import React from "react";
-import { Slide } from "@material-ui/core";
+import { Slide, Grow } from "@material-ui/core";
 
 function getScrollY(scroller) {
   return scroller.pageYOffset !== undefined
@@ -10,11 +10,34 @@ function getScrollY(scroller) {
         .scrollTop;
 }
 
+const useShowOnScroll = options => {
+  const { threshold, scroller } = options;
+
+  const [show, setShow] = React.useState(false);
+
+  const handleScroll = React.useCallback(() => {
+    const scrollY = getScrollY(scroller || window);
+
+    setShow(
+      scrollY > threshold ? true : false
+    );
+  }, [scroller, threshold]);
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
+  return show;
+};
+
 const useHideOnScroll = options => {
   const { threshold, scroller } = options;
 
   const scrollRef = React.useRef();
-  const [hide, setHide] = React.useState(false);
+  const [hide, setHide] = React.useState(true);
 
   const handleScroll = React.useCallback(() => {
     const scrollY = getScrollY(scroller || window);
@@ -41,7 +64,19 @@ const useHideOnScroll = options => {
   return hide;
 };
 
-export default function HideOnScroll(props) {
+function ShowOnScroll(props) {
+  const { children, threshold, scroller, ...other } = props;
+
+  const show = useShowOnScroll({ threshold, scroller });
+
+  return (
+    <Grow in={show} {...other}>
+      {children}
+    </Grow>
+  );
+}
+
+function HideOnScroll(props) {
   const { children, threshold, scroller, ...other } = props;
 
   const hide = useHideOnScroll({ threshold, scroller });
@@ -51,4 +86,9 @@ export default function HideOnScroll(props) {
       {children}
     </Slide>
   );
+}
+
+export {
+  ShowOnScroll,
+  HideOnScroll
 }

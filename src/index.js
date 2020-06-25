@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
 import i18n from './utils/i18n';
 import * as serviceWorker from './serviceWorker';
 
@@ -24,9 +23,7 @@ const Index = {
     run: function () {
       ReactDOM.render(
         <React.StrictMode>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <App />
         </React.StrictMode>,
         document.getElementById('root'),
       );
