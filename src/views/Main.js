@@ -8,6 +8,9 @@ import HomePage from './HomePage';
 import CompanyHero from './CompanyHero';
 import CompanyDetails from './CompanyDetails';
 import { HideOnScroll, ShowOnScroll } from '../utils/scrollingUtils';
+import CommercialCategories from './CommercialCategories';
+import ResidentialCategories from './ResidentialCategories';
+import ContactUs from './ContactUs';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -38,14 +41,11 @@ const useStyles = makeStyles((theme) => ({
 
   fabScrollToTop: {
     position: 'fixed',
-    right: 35,
+    right: 15,
     bottom: 15,
     zIndex: 3
   }
 }));
-
-//TODO: Add Image preloading
-//TODO: Make it so Images do not swap when browser not in focus
 
 export default function Main(props) {
 
@@ -56,12 +56,12 @@ export default function Main(props) {
   }, []);
   
   const setHash = (hash) => {
-    window.location.hash = hash;
-
+    window.history.pushState(null, null, `#${hash}`);
     scrollToHashElement();
   }
 
   const scrollToHashElement = () => {
+
     const hash = window.location.hash;
     const element = document.getElementById(hash.replace("#", ""));
 
@@ -71,13 +71,14 @@ export default function Main(props) {
           behavior: element ? "smooth" : "auto",
           top: element ? element.offsetTop : 0
         });
-      }, 100);
+      }, 0);
     } else {
       scrollToTop()
     }
   }
 
   const scrollToTop = () => {
+    window.history.pushState(null, null, '#');
     window.scrollTo({
       behavior: "smooth",
       top: 0
@@ -103,7 +104,7 @@ export default function Main(props) {
             <ButtonGroup variant="text" color="inherit" className={classes.appBarButtons}>
               <Button onClick={() => setHash('commercial')}>Commercial</Button>
               <Button onClick={() => setHash('residential')}>Residential</Button>
-              <Button>Contact Us</Button>
+              <Button onClick={() => setHash('contactus')}>Contact Us</Button>
             </ButtonGroup>
           </Toolbar>
         </AppBar>
@@ -113,7 +114,13 @@ export default function Main(props) {
       
       <CompanyDetails />
 
+      <CommercialCategories />
+
       <CompanyHero />
+
+      <ResidentialCategories />
+
+      <ContactUs />
       
       <ShowOnScroll threshold={100}>
         <Fab onClick={() => scrollToTop()} size="medium" color="primary" className={classes.fabScrollToTop}>

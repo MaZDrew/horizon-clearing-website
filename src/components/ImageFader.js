@@ -15,15 +15,17 @@ const slides = [
 ]
 
 const useStyles = makeStyles((theme) => ({
-    bg: {
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      willChange: 'opacity',
-      zIndex: -2
-    },
+  bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    willChange: 'opacity',
+    zIndex: -2
+  },
+
+
 }));
 
 const ImageFader = () => {
@@ -38,14 +40,40 @@ const ImageFader = () => {
     config: config.molasses,
   })
 
-  useEffect(() => void setInterval(() => set(state => (state + 1) % 4), 6000), [])
+  const [inFocus, setInFocus] = useState(true);
+
+  const onFocus = () => {
+    setInFocus(true);
+  }
+
+  const onBlur = () => {
+    setInFocus(false);
+  }
+
+  useEffect(() => {
+
+    window.addEventListener('focus', onFocus);
+    window.addEventListener('blur', onBlur);
+
+    void setInterval(() => {
+      if(inFocus) set(state => (state + 1) % 4)
+    }, 6000);
+
+    return () => {
+      window.removeEventListener('focus', onFocus);
+      window.removeEventListener('blur', onBlur);
+    };
+
+  }, [])
   
   return transitions.map(({ item, props, key }) => (
     <animated.div
       key={key}
       className={classes.bg}
       style={{ ...props, backgroundImage: `url(${item.url})` }}
-    />
+    >
+      <img src={item.url} className={classes.bg} alt={}/>
+    </animated.div>
   ))
 }
 

@@ -37,7 +37,7 @@ const useHideOnScroll = options => {
   const { threshold, scroller } = options;
 
   const scrollRef = React.useRef();
-  const [hide, setHide] = React.useState(true);
+  const [hide, setHide] = React.useState(false);
 
   const handleScroll = React.useCallback(() => {
     const scrollY = getScrollY(scroller || window);

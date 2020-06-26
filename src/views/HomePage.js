@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Button } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
-import ImageFader from './ImageFader';
-import ExpandMoreArrow from './ExpandMoreArrow';
+import ImageFader from '../components/ImageFader';
+import ExpandMoreArrow from '../components/ExpandMoreArrow';
+import i18n from '../utils/i18n';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -61,20 +62,12 @@ const useStyles = makeStyles((theme) => ({
     top: '90%',
     left: '50%',
     transform: 'translate(-50%, -90%)'
-  },
+  }
 }));
 
 export default function HomePage(props) {
 
   const classes = useStyles();
-
-  const scrollDown = () => {
-    console.log(window.innerHeight);
-    window.scrollTo({
-      behavior: 'smooth',
-      top: window.innerheight
-    })
-  }
 
   return (
     <div className={classes.root}>
@@ -83,10 +76,10 @@ export default function HomePage(props) {
 
       <div className={classes.main}>
         <Typography color={'secondary'} className={classes.heading}>
-          <b>HORIZON CLEARING</b>
+          <b>{i18n.string('app_heading')}</b>
         </Typography>
         <Typography color={'secondary'} className={classes.subheading}>
-          <b>Serving Edmonton, Calgary, and the surrounding areas.</b>
+          <b>{i18n.string('app_subheading')}</b>
         </Typography>
       </div>
 

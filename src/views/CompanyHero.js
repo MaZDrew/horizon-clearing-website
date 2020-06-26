@@ -13,7 +13,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    height: '100vh'
+    height: '100vh',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(8),
+      marginRight: theme.spacing(8)
+    },
   },
   overlay: {
     position: 'absolute',
@@ -41,10 +45,10 @@ export default function CompanyHero() {
   const classes = useStyles();
 
   return (
-    <Paper id={'residential'} className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${Image})` }}>
+    <Paper className={classes.mainFeaturedPost} style={{ backgroundImage: `url(${Image})` }}>
       {/* Increase the priority of the hero background image */}
       {<img style={{ display: 'none' }} src={Image} alt={'hero'} />}
-      <div className={classes.overlay} id={'commercial'}/>
+      <div className={classes.overlay}/>
       <Grid container>
         <Grid item md={8}>
           <div className={classes.mainFeaturedPostContent}>
