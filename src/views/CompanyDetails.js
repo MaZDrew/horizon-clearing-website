@@ -4,7 +4,7 @@ import { Grid, Paper } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenterOutlined';
 import ScheduleIcon from '@material-ui/icons/ScheduleOutlined';
-import AttachMoney from '@material-ui/icons/AttachMoneyOutlined';
+import HowToRegIcon from '@material-ui/icons/HowToRegOutlined';
 import Image from '../static/images/trusted.png';
 import Image2 from '../static/images/dedicated.png';
 import Image3 from '../static/images/efficient.jpg';
@@ -100,7 +100,7 @@ export default function CompanyDetails(props) {
         <Grid item>
           <Paper variant={'outlined'} className={classes.paper}>
             {<img className={classes.bgImage} src={Image} alt={'hero'} />}
-            <AttachMoney className={classes.icon}/>
+            <HowToRegIcon className={classes.icon}/>
             <Typography color={'secondary'} variant={'h3'} className={classes.headerText}>
               <b>Trusted</b>
             </Typography>

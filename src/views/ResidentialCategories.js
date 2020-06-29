@@ -111,7 +111,7 @@ function ResidentialCategories(props) {
   return (
     <div id={'residential'} className={classes.root}>
       <Typography variant="h4" marked="center" align="center" component="h2">
-        Residential
+        <b>Residential</b>
       </Typography>
       <div className={classes.images}>
         {images.map((image) => (

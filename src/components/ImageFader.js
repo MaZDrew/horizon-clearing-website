@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Image1 from '../static/images/image1.jpg';
 import Image2 from '../static/images/image2.jpg';
-import Image3 from '../static/images/image3.jpg';
+import Image3 from '../static/images/clearing.png';
 import Image4 from '../static/images/image4.jpg';
 
 const slides = [
@@ -38,20 +38,28 @@ const ImageFader = () => {
     config: config.molasses,
   })
 
-  const [inFocus, setInFocus] = useState(true);
-
   useEffect(() => {
 
-    window.addEventListener('focus', () => setInFocus(true));
-    window.addEventListener('blur', () => setInFocus(false));
+    let transitionInterval;
 
-    void setInterval(() => {
-      if(inFocus) set(state => (state + 1) % 4)
-    }, 6000);
+    function updateImage() {
+      set(state => (state + 1) % 4)
+    }
+
+    function setTransitionInterval() {
+      transitionInterval = setInterval(updateImage, 6000);
+    }
+
+    function clearTransitionInterval() {
+      if(transitionInterval) clearTimeout(transitionInterval)
+    }
+
+    window.addEventListener('focus', setTransitionInterval);
+    window.addEventListener('blur', clearTransitionInterval);
 
     return () => {
-      window.removeEventListener('focus', () => setInFocus(true));
-      window.removeEventListener('blur', () => setInFocus(false));
+      window.removeEventListener('focus', setTransitionInterval);
+      window.removeEventListener('blur', clearTransitionInterval);
     };
 
   }, [])

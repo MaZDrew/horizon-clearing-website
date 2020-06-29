@@ -6,18 +6,16 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'relative',
     width: '100%',
-    backgroundColor: theme.palette.primary.light,
+    backgroundColor: theme.palette.primary,
   },
   contact: {
     margin: theme.spacing(2)
-  },
-  textfield: {
-
   },
   copyright: {
     margin: theme.spacing(2)
   },
   footer: {
+    borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
@@ -58,7 +56,7 @@ export default function ContactUs() {
               </Typography>
             
               {footer.description.map((item) => (
-                <Typography variant="subtitle1" color="textSecondary">
+                <Typography variant="subtitle1" color="primary">
                   {item}
                 </Typography>
               ))}

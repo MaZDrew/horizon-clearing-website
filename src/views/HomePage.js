@@ -86,8 +86,8 @@ export default function HomePage(props) {
 
       <div className={classes.learnMore}>
         <Grid container direction={'column'} justify={'center'} alignItems={'center'}>
-          <Button onClick={() => scrollDownPageLength()} color="secondary" className={classes.text}>
-            Learn More
+          <Button variant='outlined' onClick={() => scrollDownPageLength()} color="secondary" className={classes.text}>
+            <b>Learn More</b>
           </Button>
           <ExpandMoreArrow/>
         </Grid>

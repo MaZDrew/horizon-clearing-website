@@ -129,7 +129,7 @@ function CommercialCategories(props) {
   return (
     <div id={'commercial'} className={classes.root}>
       <Typography variant="h4" marked="center" align="center" component="h2">
-        Commercial
+        <b>Commercial</b>
       </Typography>
       <div className={classes.images}>
         {images.map((image) => (
