@@ -13,10 +13,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    height: '100vh',
+    height: '90vh',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(8),
-      marginRight: theme.spacing(8)
+      margin: theme.spacing(8)
     },
   },
   overlay: {
@@ -53,10 +52,17 @@ export default function CompanyHero() {
         <Grid item md={8}>
           <div className={classes.mainFeaturedPostContent}>
             <Typography className={classes.textShadow} component="h1" variant="h3" color="inherit" gutterBottom>
-              Horizon Clearing
+              ABOUT US
             </Typography>
-            <Typography variant="h4" color="secondary" paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            <Typography variant="h6" color="secondary" paragraph>
+              
+              In 2004, Myles Zuk started Horizon Clearing Inc. as a small scale one man enterprise, focused on land clearing. 
+              The first few years were tumultuous with the onset of the 2008 recession, but Horizon was able to brave through it's growing pains, and continues to make strides across central Alberta.
+              With nothing but a skid steer and a timberaxe, the small scale enterprise started in 2004 has grown and expanded into the company we know today. With new machinery, tools, and knowledge 
+              gained over the last 16 years, Horizon is constantly entering into new forrays - while keeping our signature stamp of quality. 
+              Whether you need a retaining wall for your home garden, or a boat launch on the North Saskatchewan River, Horizon Clearing can handle it all. 
+
+
             </Typography>
           </div>
         </Grid>

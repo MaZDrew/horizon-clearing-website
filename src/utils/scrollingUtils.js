@@ -88,7 +88,42 @@ function HideOnScroll(props) {
   );
 }
 
+function scrollToHashElement () {
+
+  const hash = window.location.hash;
+  const element = document.getElementById(hash.replace("#", ""));
+
+  if(element) {
+    setTimeout(() => {
+      window.scrollTo({
+        behavior: element ? "smooth" : "auto",
+        top: element ? element.offsetTop : 0
+      });
+    }, 0);
+  } else {
+    scrollToTop()
+  }
+}
+
+function scrollToTop () {
+  window.history.pushState(null, null, '#');
+  window.scrollTo({
+    behavior: "smooth",
+    top: 0
+  });
+}
+
+function scrollDownPageLength () {
+  window.scrollTo({
+    behavior: "smooth",
+    top: document.body.offsetHeight
+  });
+}
+
 export {
   ShowOnScroll,
-  HideOnScroll
+  HideOnScroll,
+  scrollToTop,
+  scrollToHashElement,
+  scrollDownPageLength
 }

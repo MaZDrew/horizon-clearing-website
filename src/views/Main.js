@@ -7,7 +7,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import HomePage from './HomePage';
 import CompanyHero from './CompanyHero';
 import CompanyDetails from './CompanyDetails';
-import { HideOnScroll, ShowOnScroll } from '../utils/scrollingUtils';
+import { HideOnScroll, ShowOnScroll, scrollToTop, scrollToHashElement } from '../utils/scrollingUtils';
 import CommercialCategories from './CommercialCategories';
 import ResidentialCategories from './ResidentialCategories';
 import ContactUs from './ContactUs';
@@ -60,38 +60,6 @@ export default function Main(props) {
     scrollToHashElement();
   }
 
-  const scrollToHashElement = () => {
-
-    const hash = window.location.hash;
-    const element = document.getElementById(hash.replace("#", ""));
-
-    if(element) {
-      setTimeout(() => {
-        window.scrollTo({
-          behavior: element ? "smooth" : "auto",
-          top: element ? element.offsetTop : 0
-        });
-      }, 0);
-    } else {
-      scrollToTop()
-    }
-  }
-
-  const scrollToTop = () => {
-    window.history.pushState(null, null, '#');
-    window.scrollTo({
-      behavior: "smooth",
-      top: 0
-    });
-  }
-
-  const scrollDownPageLength = () => {
-    window.scrollTo({
-      behavior: "smooth",
-      top: window.innerHeight
-    });
-  }
-
   return (
     <div className={classes.root}>
       
@@ -110,13 +78,13 @@ export default function Main(props) {
         </AppBar>
       </HideOnScroll>
 
-      <HomePage scrollDown={scrollDownPageLength}/>
+      <HomePage />
       
+      <CompanyHero />
+
       <CompanyDetails />
 
       <CommercialCategories />
-
-      <CompanyHero />
 
       <ResidentialCategories />
 

@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Button } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import ImageFader from '../components/ImageFader';
 import ExpandMoreArrow from '../components/ExpandMoreArrow';
 import i18n from '../utils/i18n';
+import { scrollDownPageLength } from '../utils/scrollingUtils';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -85,7 +86,7 @@ export default function HomePage(props) {
 
       <div className={classes.learnMore}>
         <Grid container direction={'column'} justify={'center'} alignItems={'center'}>
-          <Button onClick={() => props.scrollDown()} color="secondary" className={classes.text}>
+          <Button onClick={() => scrollDownPageLength()} color="secondary" className={classes.text}>
             Learn More
           </Button>
           <ExpandMoreArrow/>

@@ -23,9 +23,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
     willChange: 'opacity',
     zIndex: -2
-  },
-
-
+  }
 }));
 
 const ImageFader = () => {
@@ -42,26 +40,18 @@ const ImageFader = () => {
 
   const [inFocus, setInFocus] = useState(true);
 
-  const onFocus = () => {
-    setInFocus(true);
-  }
-
-  const onBlur = () => {
-    setInFocus(false);
-  }
-
   useEffect(() => {
 
-    window.addEventListener('focus', onFocus);
-    window.addEventListener('blur', onBlur);
+    window.addEventListener('focus', () => setInFocus(true));
+    window.addEventListener('blur', () => setInFocus(false));
 
     void setInterval(() => {
       if(inFocus) set(state => (state + 1) % 4)
     }, 6000);
 
     return () => {
-      window.removeEventListener('focus', onFocus);
-      window.removeEventListener('blur', onBlur);
+      window.removeEventListener('focus', () => setInFocus(true));
+      window.removeEventListener('blur', () => setInFocus(false));
     };
 
   }, [])
@@ -72,7 +62,7 @@ const ImageFader = () => {
       className={classes.bg}
       style={{ ...props, backgroundImage: `url(${item.url})` }}
     >
-      <img src={item.url} className={classes.bg} alt={}/>
+      <img src={item.url} className={classes.bg} alt={'horizon clearing'}/>
     </animated.div>
   ))
 }
