@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import i18n from './utils/i18n';
 import * as serviceWorker from './serviceWorker';
+import './index.css';
 
 const Index = {
     initialize: async function () {

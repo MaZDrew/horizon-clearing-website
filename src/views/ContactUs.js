@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2)
   },
   copyright: {
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
+    textAlign: 'center'
   },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
@@ -23,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: theme.spacing(6),
       paddingBottom: theme.spacing(6),
     }
-  },
+  }
 }));
 
 const footers = [
@@ -45,9 +46,7 @@ export default function ContactUs() {
     <div id={'contactus'} className={classes.root}>
 
       <Container maxWidth="md" component="footer" className={classes.footer}>
-
         <Grid container justify="space-evenly" alignItems="flex-start">
-          
           {footers.map((footer) => (
             <Grid item key={footer.title}>
 
@@ -55,33 +54,24 @@ export default function ContactUs() {
                 {footer.title}
               </Typography>
             
-              {footer.description.map((item) => (
-                <Typography variant="subtitle1" color="primary">
+              {footer.description.map((item, index) => (
+                <Typography key={`description${index}`} variant="subtitle1" color="primary">
                   {item}
                 </Typography>
               ))}
         
             </Grid>
           ))}
-
         </Grid>
-
       </Container>
       
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        alignItems="center"
-      >
-        <Typography variant={'body2'} className={classes.copyright}>
-          {'© '}
-          <Link color="inherit" href="https://horizon-clearing.web.app">
-            Horizon Clearing Inc.
-          </Link>{' '}
-          {new Date().getFullYear()}
-        </Typography>
-      </Grid>
+      <Typography variant={'body2'} className={classes.copyright}>
+        {'© '}
+        <Link color="inherit" href="https://horizon-clearing.web.app">
+          Horizon Clearing Inc.
+        </Link>{' '}
+        {new Date().getFullYear()}
+      </Typography>
 
     </div>
   );

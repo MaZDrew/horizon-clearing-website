@@ -120,10 +120,16 @@ function scrollDownPageLength () {
   });
 }
 
+function setHash(hash) {
+  window.history.pushState(null, null, `#${hash}`);
+  scrollToHashElement();
+}
+
 export {
   ShowOnScroll,
   HideOnScroll,
   scrollToTop,
   scrollToHashElement,
-  scrollDownPageLength
+  scrollDownPageLength,
+  setHash
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import Main from './views/Main';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-import './views/styles.css';
 
 //https://material-ui.com/customization/color/#color-tool
 //https://material.io/resources/color/

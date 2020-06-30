@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import ImageFader from '../components/ImageFader';
 import ExpandMoreArrow from '../components/ExpandMoreArrow';
 import i18n from '../utils/i18n';
-import { scrollDownPageLength } from '../utils/scrollingUtils';
+import { scrollDownPageLength } from '../utils/scrollingUtil';
 
 const useStyles = makeStyles((theme) => ({
 

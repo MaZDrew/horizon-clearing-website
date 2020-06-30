@@ -9,7 +9,6 @@ import Image from '../static/images/trusted.png';
 import Image2 from '../static/images/dedicated.png';
 import Image3 from '../static/images/efficient.jpg';
 
-//, from finding the right aggregate materials to the optimal method to lay them down, we leave no stone unturned.
 const useStyles = makeStyles((theme) => ({
 
   root: {
@@ -92,7 +91,6 @@ export default function CompanyDetails(props) {
               At Horizon Clearing we approach each project with an economic mindset. 
               From finding the right aggregate materials, to laying them down - 
               start to finish, we ensure a great product at a competitive market price.
-              
             </Typography>
           </Paper>
         </Grid>

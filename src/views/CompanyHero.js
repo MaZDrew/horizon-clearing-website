@@ -22,19 +22,19 @@ const useStyles = makeStyles((theme) => ({
       height: '100% !important',
     },
     [theme.breakpoints.up('lg')]: {
-      width: '50% !important',
-      height: 'auto',
-      margin:'auto',
+      minWidth: '600px',
+      maxHeight: '630px',
     }
   },
   headerText: {
     textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
     textAlign: 'center',
+    paddingBottom: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
-      fontSize: 32
+      fontSize: 28,
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: 54
+      fontSize: 54,
     }
   },
   textParent: {
@@ -63,6 +63,8 @@ const useStyles = makeStyles((theme) => ({
     textShadow: '-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black',
     [theme.breakpoints.down('xs')]: {
       fontSize: 16,
+      maxHeight: '240px',
+      overflow: 'auto'
     },
     [theme.breakpoints.up('sm')]: {
       fontSize: 20,
@@ -84,11 +86,8 @@ export default function CompanyHero() {
 
   return (
     <Paper className={classes.root}>
-
       <img className={classes.bgImage} src={Image} alt={'hero'} />
-
       <div className={classes.overlay} />
-
       <div className={classes.textParent}>
         <Typography className={classes.headerText} component="h1" variant="h3" color="secondary" gutterBottom>
           <b>ABOUT US</b>
@@ -101,7 +100,6 @@ export default function CompanyHero() {
           Whether you need a retaining wall for your home garden, or a boat launch on the North Saskatchewan River, Horizon Clearing can handle it all. 
         </Typography>
       </div>
-
     </Paper>     
   );
 }
