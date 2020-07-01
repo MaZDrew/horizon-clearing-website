@@ -5,6 +5,8 @@ import { ThemeProvider } from '@material-ui/styles';
 
 //https://material-ui.com/customization/color/#color-tool
 //https://material.io/resources/color/
+
+//TODO: Put theme in its own module
 const theme = createMuiTheme({
   palette: {
     primary: {

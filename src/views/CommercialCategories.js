@@ -91,7 +91,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function CommercialCategories(props) {
+
   const classes = useStyles();
+
+  const openModal = (title, src) => {
+    props.openModal(title, src);
+    console.log("!");
+  }
 
   const images = [
     {
