@@ -3,10 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
 
-import WallsImage from '../static/images/walls.png';
-import ConcreteImage from '../static/images/concrete.png';
-import AcreageImage from '../static/images/acreage.png';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: theme.spacing(8),
@@ -92,17 +88,17 @@ function ResidentialCategories(props) {
 
   const images = [
     {
-      url: WallsImage,
+      url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/walls.png?alt=media&token=9093ce28-44be-44cf-a8ef-bfdb43da49ff',
       title: 'Walls',
       width: '30%',
     },
     {
-      url: AcreageImage,
+      url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/acreage.png?alt=media&token=a7c01013-cf0c-49e3-80e3-8b89d46cbee4',
       title: 'Acreage Development',
       width: '40%',
     },
     {
-      url: ConcreteImage,
+      url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/concrete.png?alt=media&token=39457778-edf3-41d3-bc2e-1d101d37e75b',
       title: 'Concrete',
       width: '30%',
     }

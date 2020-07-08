@@ -1,27 +1,46 @@
 import React from 'react';
-import { Dialog, DialogTitle, DialogContent } from '@material-ui/core';
+import { Dialog, DialogTitle, Typography, IconButton } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
+import CloseIcon from '@material-ui/icons/Close';
 
 const styles = (theme) => ({
-  root: {
-    
+  modalImage: {
+    maxHeight: '450px'
   },
+  descriptionText: {
+    padding: theme.spacing(2)
+  },
+  closeButton: {
+    fontSize: 25,
+    position: 'absolute',
+    top: 10,
+    right: 10
+  }
 });
 
 function PictureModal(props) {
 
+  const { classes, open, handleClose, title, imageUrl } = props;
+
   return (
-    <div>
+    <React.Fragment>
       <Dialog
-        open={props.open}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="dialog-title"
+        disableScrollLock
       >
-        <DialogTitle>{props.title}</DialogTitle>
-        <DialogContent>
-          Dialog Content!
-        </DialogContent>
+        <DialogTitle id="dialog-title">{title}</DialogTitle>
+        <IconButton onClick={handleClose} aria-label="close-modal" className={classes.closeButton}>
+          <CloseIcon />
+        </IconButton>
+        <img src={imageUrl} className={classes.modalImage} alt={''} />
+        <Typography className={classes.descriptionText} variant="body1" color="inherit">
+          This a test paragraph, does it look good?
+        </Typography>
       </Dialog>
-    </div>
+    </React.Fragment>
   );
 }
 
-export default PictureModal;
+export default withStyles(styles)(PictureModal)

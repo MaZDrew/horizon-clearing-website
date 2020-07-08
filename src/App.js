@@ -1,49 +1,42 @@
 import React from 'react';
-import Main from './views/Main';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
+import HomePage from './views/HomePage';
+import CompanyHero from './views/CompanyHero';
+import CompanyDetails from './views/CompanyDetails';
+import ContactUs from './views/ContactUs';
+import CommercialCategories from './views/CommercialCategories';
+import ResidentialCategories from './views/ResidentialCategories';
+import CustomAppBar from './components/CustomAppBar';
+import ScrollUpFAB from './components/ScrollUpFAB';
+import { scrollToHashElement } from './utils/scrollingUtil';
+import withRoot from './utils/withRoot';
 
-//https://material-ui.com/customization/color/#color-tool
-//https://material.io/resources/color/
+//TODO: replace all images with URLS for easy data transer/reduce file size, and can actually be alot easier to pre-load
+//TODO: Fine tune modal UI with bullet points / description
+//TODO: Get google hosting linked to firebase hosting
+//TODO: Deploy v1.0.0 of Horizon Clearing website
 
-//TODO: Put theme in its own module
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#6d6d6d',
-      main: '#1b5e20',
-      dark: '#1b1b1b',
-      contrastText: '#ffffff',
-    },
-    secondary: {
-      light: '#ff7961',
-      main: '#ffca28',
-      dark: '#ba000d',
-      contrastText: '#000000',
-    },
-  },
-  typography: {
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(',')
-  }
-});
+// ----- Improvements -------
+//TODO: Think of ways to fix about us on mobile / general mobile improvements
+//TODO: Image fader priority loading - look into fade/blur issue
 
-function App() {
+function App(props) {
+  
+  React.useEffect(() => {
+    scrollToHashElement();
+  }, []);
+
   return (
-    <ThemeProvider theme={theme}>
-      <Main/>
-    </ThemeProvider>
-  );
+    <React.Fragment>
+      <CustomAppBar />
+      <HomePage />
+      <CompanyHero />
+      <CompanyDetails />
+      <CommercialCategories />
+      <ResidentialCategories />
+      <ContactUs />
+      <ScrollUpFAB />
+    </React.Fragment>
+  )
 }
 
-export default App;
+export default withRoot(App);

@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import Image from '../static/images/image3.jpg';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -86,7 +85,7 @@ export default function CompanyHero() {
 
   return (
     <Paper className={classes.root}>
-      <img className={classes.bgImage} src={Image} alt={'hero'} />
+      <img className={classes.bgImage} src={'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/fader-image3.jpg?alt=media&token=387017a9-804d-4e00-a01c-9d861b74a3d9'} alt={'hero'} />
       <div className={classes.overlay} />
       <div className={classes.textParent}>
         <Typography className={classes.headerText} component="h1" variant="h3" color="secondary" gutterBottom>

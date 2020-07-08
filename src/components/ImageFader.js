@@ -2,16 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Image1 from '../static/images/image1.jpg';
-import Image2 from '../static/images/image2.jpg';
-import Image3 from '../static/images/clearing.png';
-import Image4 from '../static/images/image4.jpg';
-
 const slides = [
-  { id: 0, url: Image4 },
-  { id: 1, url: Image3 },
-  { id: 2, url: Image2 },
-  { id: 3, url: Image1 },
+  { id: 0, url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/fader-image4.jpg?alt=media&token=35bf2aca-aa7e-4f7c-8787-dda1721f0594' },
+  { id: 1, url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/fader-image2.jpg?alt=media&token=e5d0bfbf-fc54-42f5-9f1d-c983d1726197' },
+  { id: 2, url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/clearing.png?alt=media&token=abd88bda-c0c2-493f-a330-4796ae234fd1' },
+  { id: 3, url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/fader-image4.jpg?alt=media&token=35bf2aca-aa7e-4f7c-8787-dda1721f0594' },
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
     willChange: 'opacity',
     zIndex: -2
   }
@@ -68,10 +64,11 @@ const ImageFader = () => {
     <animated.div
       key={key}
       className={classes.bg}
-      style={{ ...props, backgroundImage: `url(${item.url})` }}
-    >
-      <img src={item.url} className={classes.bg} alt={'horizon clearing'}/>
-    </animated.div>
+      style={{ 
+        ...props,
+        backgroundImage: `url(${item.url})`,
+      }}
+    />
   ))
 }
 
