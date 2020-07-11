@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import PictureModal from '../components/PictureModal';
+import i18n from '../utils/i18n';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -86,32 +88,52 @@ const useStyles = makeStyles((theme) => ({
 function ResidentialCategories(props) {
   const classes = useStyles();
 
+  const [modal, setModal] = useState({
+    open: false, 
+    title: '',
+    imageUrl: '',
+    description: ''
+  })
+
   const images = [
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/walls.png?alt=media&token=9093ce28-44be-44cf-a8ef-bfdb43da49ff',
-      title: 'Walls',
+      description: i18n.string('walls_description'),
+      title: i18n.string('walls_title'),
       width: '30%',
     },
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/acreage.png?alt=media&token=a7c01013-cf0c-49e3-80e3-8b89d46cbee4',
-      title: 'Acreage Development',
+      description: i18n.string('acreage_description'),
+      title: i18n.string('acreage_title'),
       width: '40%',
     },
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/concrete.png?alt=media&token=39457778-edf3-41d3-bc2e-1d101d37e75b',
-      title: 'Concrete',
+      description: i18n.string('concrete_description'),
+      title: i18n.string('concrete_title'),
       width: '30%',
     }
   ];
 
+  const openModal = (title, imageUrl, description) => {
+    setModal({open:true, title, imageUrl, description})
+  }
+
+  const closeModal = () => {
+    setModal({...modal, open:false})
+  }
+
   return (
     <div id={'residential'} className={classes.root}>
+      <PictureModal open={modal.open} title={modal.title} imageUrl={modal.imageUrl} handleClose={closeModal} description={modal.description}/>
       <Typography variant="h4" marked="center" align="center" component="h2">
         <b>Residential</b>
       </Typography>
       <div className={classes.images}>
         {images.map((image) => (
           <ButtonBase
+            onClick={() => openModal(image.title, image.url, image.description)}
             key={image.title}
             className={classes.imageWrapper}
             style={{

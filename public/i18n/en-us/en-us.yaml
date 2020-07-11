@@ -1,3 +1,59 @@
 hello_world: Hello World!
 app_heading: HORIZON CLEARING
 app_subheading: Serving Edmonton, Calgary, and the surrounding areas.
+
+site_preparation_description1: Land Stripping
+site_preparation_description2: Common Excavation
+site_preparation_description3: Material Import / Export 
+site_preparation_description4: Detail Grading 
+site_preparation_description5: Excavation 
+site_preparation_description6: Reclaim 
+site_preparation_description7: Trenching for Underground Utilities 
+
+land_clearing_description1: Mulching
+land_clearing_description2: Danger Tree Removal
+land_clearing_description3: Salvage
+
+road_building_description1: Both common grade and high grade raised roads
+road_building_description2: Finished to Pregrade Gravel, or
+road_building_description3: Recycled Ashpahalt Finish
+road_building_description4: Concrete Finish
+road_building_description5: Paved Ashphalt Finish
+road_building_description6: All fully compacted
+
+culvert_description1: Culvert Installation (All sizes)
+culvert_description2: Ditches
+culvert_description3: Swales
+  
+driveway_description1: Driveways
+driveway_description2: Roundabouts
+driveway_description3: Pedestrian Pathways
+driveway_description4: All built to the same standard as our roads
+  
+water_erosion_description1: Riverbank Protection
+water_erosion_description2: Riprap
+water_erosion_description3: River Training / Armouring
+water_erosion_description4: Geotech & Fabric Erosion Solutions
+water_erosion_description5: Silt / Coconut Fences
+  
+walls_description1: Mix of machine graded and hand placed rocks for small to medium scale retaining walls
+
+acreage_description1: Trails
+acreage_description2: Clearing
+acreage_description3: Septic & Water
+acreage_description4: Basement Excavation
+acreage_description5: Driveways & Access Roads
+  
+concrete_description1: Parking Lots
+concrete_description2: Sidewalks
+concrete_description3: Manholes
+  
+site_preparation_title: Site Preparation
+land_clearing_title: Land Clearing
+road_building_title: Road Building
+culvert_title: Culverts / Sloping
+driveway_title: Driveways / Pathways
+water_erosion_title: Water / Erosion
+walls_title: Walls
+acreage_title: Acreage Development
+concrete_title: Concrete

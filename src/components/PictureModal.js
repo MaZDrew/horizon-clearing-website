@@ -20,7 +20,7 @@ const styles = (theme) => ({
 
 function PictureModal(props) {
 
-  const { classes, open, handleClose, title, imageUrl } = props;
+  const { classes, open, handleClose, title, imageUrl, descriptions } = props; 
 
   return (
     <React.Fragment>
@@ -35,9 +35,14 @@ function PictureModal(props) {
           <CloseIcon />
         </IconButton>
         <img src={imageUrl} className={classes.modalImage} alt={''} />
-        <Typography className={classes.descriptionText} variant="body1" color="inherit">
-          This a test paragraph, does it look good?
-        </Typography>
+        
+          {descriptions.map((desc) => (
+            <Typography className={classes.descriptionText} variant="body1" color="inherit">
+              {desc}
+            </Typography>
+          ))}
+          
+        
       </Dialog>
     </React.Fragment>
   );
