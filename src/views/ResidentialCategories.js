@@ -92,32 +92,38 @@ function ResidentialCategories(props) {
     open: false, 
     title: '',
     imageUrl: '',
-    description: ''
+    descriptions: []
   })
 
   const images = [
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/walls.png?alt=media&token=9093ce28-44be-44cf-a8ef-bfdb43da49ff',
-      description: i18n.string('walls_description'),
+      descriptions: [
+        i18n.string('walls_description'),
+      ],
       title: i18n.string('walls_title'),
       width: '30%',
     },
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/acreage.png?alt=media&token=a7c01013-cf0c-49e3-80e3-8b89d46cbee4',
-      description: i18n.string('acreage_description'),
+      descriptions: [
+        i18n.string('walls_description'),
+      ],
       title: i18n.string('acreage_title'),
       width: '40%',
     },
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/concrete.png?alt=media&token=39457778-edf3-41d3-bc2e-1d101d37e75b',
-      description: i18n.string('concrete_description'),
+      descriptions: [
+        i18n.string('walls_description'),
+      ],
       title: i18n.string('concrete_title'),
       width: '30%',
     }
   ];
 
-  const openModal = (title, imageUrl, description) => {
-    setModal({open:true, title, imageUrl, description})
+  const openModal = (title, imageUrl, descriptions) => {
+    setModal({open:true, title, imageUrl, descriptions})
   }
 
   const closeModal = () => {
@@ -126,14 +132,14 @@ function ResidentialCategories(props) {
 
   return (
     <div id={'residential'} className={classes.root}>
-      <PictureModal open={modal.open} title={modal.title} imageUrl={modal.imageUrl} handleClose={closeModal} description={modal.description}/>
+      <PictureModal open={modal.open} title={modal.title} imageUrl={modal.imageUrl} handleClose={closeModal} descriptions={modal.descriptions}/>
       <Typography variant="h4" marked="center" align="center" component="h2">
         <b>Residential</b>
       </Typography>
       <div className={classes.images}>
         {images.map((image) => (
           <ButtonBase
-            onClick={() => openModal(image.title, image.url, image.description)}
+            onClick={() => openModal(image.title, image.url, image.descriptions)}
             key={image.title}
             className={classes.imageWrapper}
             style={{

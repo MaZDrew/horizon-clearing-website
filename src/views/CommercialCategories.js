@@ -124,12 +124,12 @@ function CommercialCategories(props) {
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/roadbuilding.jpg?alt=media&token=f56633d5-1767-4027-bf02-5d5e09e38ba7',
       descriptions: [
-        i18n.string('land_clearing_description1'),
-        i18n.string('land_clearing_description2'),
-        i18n.string('land_clearing_description3'),
-        i18n.string('land_clearing_description4'),
-        i18n.string('land_clearing_description5'),
-        i18n.string('land_clearing_description6'),
+        i18n.string('road_building_description1'),
+        i18n.string('road_building_description2'),
+        i18n.string('road_building_description3'),
+        i18n.string('road_building_description4'),
+        i18n.string('road_building_description5'),
+        i18n.string('road_building_description6'),
       ],
       title: i18n.string('road_building_title'),
       width: '40%',
