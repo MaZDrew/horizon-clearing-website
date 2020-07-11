@@ -8,7 +8,8 @@ const styles = (theme) => ({
     maxHeight: '450px'
   },
   descriptionText: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    textAlign: 'center'
   },
   closeButton: {
     fontSize: 25,
@@ -36,11 +37,11 @@ function PictureModal(props) {
         </IconButton>
         <img src={imageUrl} className={classes.modalImage} alt={''} />
         <Typography className={classes.descriptionText} variant="body1" color="inherit">
-          <ul>
+          
             {descriptions.map((desc) => (
-              <li>{desc}</li>
+              <span>• {desc}<br/></span> 
             ))}
-          </ul>
+          
         </Typography>
 
       </Dialog>

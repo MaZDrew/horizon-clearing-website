@@ -10,14 +10,15 @@ import ScrollUpFAB from './components/ScrollUpFAB';
 import { scrollToHashElement } from './utils/scrollingUtil';
 import withRoot from './utils/withRoot';
 
-//TODO: replace all images with URLS for easy data transer/reduce file size, and can actually be alot easier to pre-load
-//TODO: Fine tune modal UI with bullet points / description
+//TODO: Finish transfering hardcoded strings into yaml file
 //TODO: Get google hosting linked to firebase hosting
 //TODO: Deploy v1.0.0 of Horizon Clearing website
 
 // ----- Improvements -------
 //TODO: Think of ways to fix about us on mobile / general mobile improvements
 //TODO: Image fader priority loading - look into fade/blur issue
+//TODO: Carousel inside image modal
+//TODO: Contact us box at bottom (maybe)
 
 function App(props) {
   

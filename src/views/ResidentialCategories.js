@@ -99,7 +99,7 @@ function ResidentialCategories(props) {
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/walls.png?alt=media&token=9093ce28-44be-44cf-a8ef-bfdb43da49ff',
       descriptions: [
-        i18n.string('walls_description'),
+        i18n.string('walls_description1'),
       ],
       title: i18n.string('walls_title'),
       width: '30%',
@@ -107,7 +107,11 @@ function ResidentialCategories(props) {
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/acreage.png?alt=media&token=a7c01013-cf0c-49e3-80e3-8b89d46cbee4',
       descriptions: [
-        i18n.string('walls_description'),
+        i18n.string('acreage_description1'),
+        i18n.string('acreage_description2'),
+        i18n.string('acreage_description3'),
+        i18n.string('acreage_description4'),
+        i18n.string('acreage_description5'),
       ],
       title: i18n.string('acreage_title'),
       width: '40%',
@@ -115,7 +119,9 @@ function ResidentialCategories(props) {
     {
       url: 'https://firebasestorage.googleapis.com/v0/b/horizon-clearing.appspot.com/o/concrete.png?alt=media&token=39457778-edf3-41d3-bc2e-1d101d37e75b',
       descriptions: [
-        i18n.string('walls_description'),
+        i18n.string('concrete_description1'),
+        i18n.string('concrete_description2'),
+        i18n.string('concrete_description3'),
       ],
       title: i18n.string('concrete_title'),
       width: '30%',
