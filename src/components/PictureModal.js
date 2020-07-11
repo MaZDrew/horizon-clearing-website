@@ -37,13 +37,10 @@ function PictureModal(props) {
         </IconButton>
         <img src={imageUrl} className={classes.modalImage} alt={''} />
         <Typography className={classes.descriptionText} variant="body1" color="inherit">
-          
-            {descriptions.map((desc) => (
-              <span>• {desc}<br/></span> 
-            ))}
-          
+          {descriptions.map((desc) => (
+            <span>• {desc}<br/></span> 
+          ))}
         </Typography>
-
       </Dialog>
     </React.Fragment>
   );

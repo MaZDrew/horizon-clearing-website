@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Button, ButtonGroup, Toolbar, Typography } from '@material-ui/core';
 import { HideOnScroll, setHash } from '../utils/scrollingUtil';
 import { withStyles } from '@material-ui/core/styles';
+import i18n from '../utils/i18n';
 
 const styles = (theme) => ({
   appBar: {
@@ -33,12 +34,12 @@ function CustomAppBar(props) {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography edge="start" variant="h6" className={classes.appBarHeading}>
-            Horizon Clearing Inc.
+            {i18n.string('app_bar_heading')}
           </Typography>
           <ButtonGroup variant="text" color="inherit" className={classes.appBarButtons}>
-            <Button onClick={() => setHash('commercial')}>Commercial</Button>
-            <Button onClick={() => setHash('residential')}>Residential</Button>
-            <Button onClick={() => setHash('contactus')}>Contact Us</Button>
+            <Button onClick={() => setHash('commercial')}>{i18n.string('commercial_button')}</Button>
+            <Button onClick={() => setHash('residential')}>{i18n.string('residential_button')}</Button>
+            <Button onClick={() => setHash('contactus')}>{i18n.string('contact_us_button')}</Button>
           </ButtonGroup>
         </Toolbar>
       </AppBar>

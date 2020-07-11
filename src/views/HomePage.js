@@ -77,17 +77,17 @@ export default function HomePage(props) {
 
       <div className={classes.main}>
         <Typography color={'secondary'} className={classes.heading}>
-          <b>{i18n.string('app_heading')}</b>
+          <b>{i18n.string('homepage_heading')}</b>
         </Typography>
         <Typography color={'secondary'} className={classes.subheading}>
-          <b>{i18n.string('app_subheading')}</b>
+          <b>{i18n.string('homepage_subheading')}</b>
         </Typography>
       </div>
 
       <div className={classes.learnMore}>
         <Grid container direction={'column'} justify={'center'} alignItems={'center'}>
           <Button variant='outlined' onClick={() => scrollDownPageLength()} color="secondary" className={classes.text}>
-            <b>Learn More</b>
+            <b>{i18n.string('learn_more_button')}</b>
           </Button>
           <ExpandMoreArrow/>
         </Grid>

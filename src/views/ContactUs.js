@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Link, Typography, Container } from '@material-ui/core';
+import i18n from '../utils/i18n';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,20 +28,20 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const footers = [
-  {
-    title: 'Contact Us',
-    description: ['Email: horizonclearing@gmail.com', 'Tel: 403-369-5500', 'Toll free:  1-888-369-5501'],
-  },
-  {
-    title: 'Head office',
-    description: ['51108 Range Road 242A', 'Leduc County, Alberta', 'T4X 0N3'],
-  },
-];
-
 export default function ContactUs() {
 
   const classes = useStyles();
+
+  const footers = [
+    {
+      title: i18n.string('contact_us_title1'),
+      description: [i18n.string('contact_us_email'), i18n.string('contact_us_tel'), i18n.string('contact_us_tollfree')],
+    },
+    {
+      title: i18n.string('contact_us_title2'),
+      description: [i18n.string('contact_us_address'), i18n.string('contact_us_region'), i18n.string('contact_us_area_code')],
+    },
+  ];
 
   return (
     <div id={'contactus'} className={classes.root}>
@@ -68,7 +69,7 @@ export default function ContactUs() {
       <Typography variant={'body2'} className={classes.copyright}>
         {'© '}
         <Link color="inherit" href="https://horizon-clearing.web.app">
-          Horizon Clearing Inc.
+          {i18n.string('app_bar_heading')}
         </Link>{' '}
         {new Date().getFullYear()}
       </Typography>

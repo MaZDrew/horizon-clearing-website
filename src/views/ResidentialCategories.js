@@ -140,7 +140,7 @@ function ResidentialCategories(props) {
     <div id={'residential'} className={classes.root}>
       <PictureModal open={modal.open} title={modal.title} imageUrl={modal.imageUrl} handleClose={closeModal} descriptions={modal.descriptions}/>
       <Typography variant="h4" marked="center" align="center" component="h2">
-        <b>Residential</b>
+        <b>{i18n.string('residential_categories_title')}</b>
       </Typography>
       <div className={classes.images}>
         {images.map((image) => (

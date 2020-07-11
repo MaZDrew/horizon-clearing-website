@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
+import i18n from '../utils/i18n';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -89,14 +90,10 @@ export default function CompanyHero() {
       <div className={classes.overlay} />
       <div className={classes.textParent}>
         <Typography className={classes.headerText} component="h1" variant="h3" color="secondary" gutterBottom>
-          <b>ABOUT US</b>
+          <b>{i18n.string('hero_about_us')}</b>
         </Typography>
         <Typography className={classes.infoText} variant="h5" color="inherit" paragraph>
-          In 2004, Myles Zuk started Horizon Clearing Inc. as a small scale one man enterprise, focused on land clearing. 
-          The first few years were tumultuous with the onset of the 2008 recession, but Horizon was able to brave through its growing pains, and continues to make strides across central Alberta.
-          With nothing but a skid steer and a timberaxe, the small scale enterprise started in 2004 has grown and expanded into the company we know today. With new machinery, tools, and knowledge 
-          gained over the last 16 years, Horizon is constantly entering into new forrays - while keeping our signature stamp of quality. 
-          Whether you need a retaining wall for your home garden, or a boat launch on the North Saskatchewan River, Horizon Clearing can handle it all. 
+          {i18n.string('hero_description')}
         </Typography>
       </div>
     </Paper>     

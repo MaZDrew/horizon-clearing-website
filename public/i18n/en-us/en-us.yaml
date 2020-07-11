@@ -1,14 +1,25 @@
-hello_world: Hello World!
-app_heading: HORIZON CLEARING
-app_subheading: Serving Edmonton, Calgary, and the surrounding areas.
+### Home Page
+homepage_heading: HORIZON CLEARING
+homepage_subheading: Serving Edmonton, Calgary, and the surrounding areas.
+app_bar_heading: Horizon Clearing Inc.
+
+### Buttons
+learn_more_button: Learn More
+commercial_button: Commercial
+residential_button: Residential
+contact_us_button: Contact Us
+
+### Commercial / Residential Catergories
+commercial_categories_title: Commercial
+residential_categories_title: Residential
 
 site_preparation_description1: Land Stripping
 site_preparation_description2: Common Excavation
-site_preparation_description3: Material Import / Export 
-site_preparation_description4: Detail Grading 
-site_preparation_description5: Excavation 
-site_preparation_description6: Reclaim 
-site_preparation_description7: Trenching for Underground Utilities 
+site_preparation_description3: Material Import / Export
+site_preparation_description4: Detail Grading
+site_preparation_description5: Excavation
+site_preparation_description6: Reclaim
+site_preparation_description7: Trenching for Underground Utilities
 
 land_clearing_description1: Mulching
 land_clearing_description2: Danger Tree Removal
@@ -24,18 +35,18 @@ road_building_description6: All fully compacted
 culvert_description1: Culvert Installation (All sizes)
 culvert_description2: Ditches
 culvert_description3: Swales
-  
+
 driveway_description1: Driveways
 driveway_description2: Roundabouts
 driveway_description3: Pedestrian Pathways
 driveway_description4: All built to the same standard as our roads
-  
+
 water_erosion_description1: Riverbank Protection
 water_erosion_description2: Riprap
 water_erosion_description3: River Training / Armouring
 water_erosion_description4: Geotech & Fabric Erosion Solutions
 water_erosion_description5: Silt / Coconut Fences
-  
+
 walls_description1: Mix of machine graded and hand placed rocks for small to medium scale retaining walls
 
 acreage_description1: Trails
@@ -43,11 +54,11 @@ acreage_description2: Clearing
 acreage_description3: Septic & Water
 acreage_description4: Basement Excavation
 acreage_description5: Driveways & Access Roads
-  
+
 concrete_description1: Parking Lots
 concrete_description2: Sidewalks
 concrete_description3: Manholes
-  
+
 site_preparation_title: Site Preparation
 land_clearing_title: Land Clearing
 road_building_title: Road Building
@@ -57,3 +68,40 @@ water_erosion_title: Water / Erosion
 walls_title: Walls
 acreage_title: Acreage Development
 concrete_title: Concrete
+
+### Company Details
+company_details_title1: Dedicated
+company_details_description1: >
+  "If it's not done right, it's not worth doing at all."
+  Our founder is a firm believer in delivering reliable products that are built to last.
+  We train our team to uphold this standard, and work alongside industry professionals to ensure that your final product is up to grade.
+company_details_title2: Trusted
+company_details_description2: >
+  Quality service is our aim. Since 2004, we've been at the forefront of all things sub-grade. 
+  Be it site preparation, land clearing, road building, or erosion control, we've provided products across Central Alberta that leave a lasting impression.
+  Repeat customers are our business.
+company_details_title3: Efficient
+company_details_description3: >
+  Both cost-effective and deadline-oriented; 
+  At Horizon Clearing we approach each project with an economic mindset. 
+  From finding the right aggregate materials, to laying them down - start to finish, we ensure a great product at a competitive market price.
+
+### Contact Us
+contact_us_title1: Contact Us
+contact_us_email: "Email: horizonclearing@gmail.com"
+contact_us_tel: "Tel: 403-369-5500"
+contact_us_tollfree: "Toll free: 1-888-369-5501"
+
+contact_us_title2: Head Office
+contact_us_address: 51108 Range Road 242A
+contact_us_region: Leduc County, Alberta
+contact_us_area_code: T4X 0N3
+
+### Company Hero
+hero_about_us: ABOUT US
+hero_description: >
+  In 2004, Myles Zuk started Horizon Clearing Inc. as a small scale one man enterprise, focused on land clearing. 
+  The first few years were tumultuous with the onset of the 2008 recession, but Horizon was able to brave through its growing pains, and continues to make strides across central Alberta.
+  With nothing but a skid steer and a timberaxe, the small scale enterprise started in 2004 has grown and expanded into the company we know today. With new machinery, tools, and knowledge 
+  gained over the last 16 years, Horizon is constantly entering into new forrays - while keeping our signature stamp of quality. 
+  Whether you need a retaining wall for your home garden, or a boat launch on the North Saskatchewan River, Horizon Clearing can handle it all. 
