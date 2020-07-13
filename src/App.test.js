@@ -2,8 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+it("renders without crashing", () => {
+  window.scrollTo = jest.fn()
+})
+
+test('renders homepage header', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+  const linkElement = getByText(/homepage_heading/i);
   expect(linkElement).toBeInTheDocument();
 });
