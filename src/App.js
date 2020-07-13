@@ -10,6 +10,7 @@ import ScrollUpFAB from './components/ScrollUpFAB';
 import { scrollToHashElement } from './utils/scrollingUtil';
 import withRoot from './utils/withRoot';
 
+//TODO: CI/CD Test
 //TODO: Get google hosting linked to firebase hosting
 //TODO: Deploy v1.0.0 of Horizon Clearing website
 
