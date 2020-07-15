@@ -1,3 +1,6 @@
+![Horizion Clearing Inc. Continous Integration](https://github.com/MaZDrew/horizon-clearing-website/workflows/Horizion%20Clearing%20Inc.%20Continous%20Integration/badge.svg)
+![Horizon Clearing Inc. Continuous Deployment](https://github.com/MaZDrew/horizon-clearing-website/workflows/Horizon%20Clearing%20Inc.%20Continuous%20Deployment/badge.svg)
+
 # Horizon Clearing Inc. Website
 The purpose of this project is to create a website for the construction company Horizon Clearing Inc.
 This will allow them more flexibility into the future, and will produce a more modern advertising space for their ventures.
